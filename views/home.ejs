@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>;
+
+<h1>Home</h1>
+
+<% if(locals.startinContent) {%>
+    <p><%= startinContent %></p>
+<% } %>
+<% if(locals.data) {%>
+
+    <% data.forEach(content =>{  %>
+
+        <h2><%= content.title %></h2>
+        <p class="text-limit"><%= content.body.substring(0,100)%>.. </p>
+        <a href="/post/<%= content.title %>">Read more</a>
+
+    <% }) %>
+    
+<% } %>
+
+<%- include("partials/footer.ejs") %>
